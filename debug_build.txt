@@ -1,0 +1,1022 @@
+﻿node.exe : 2026-08-14T19:56:09.550Z vite:config config file loaded in 68.23ms
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (2026-08-14T19:5...aded in 68.23ms 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+2026-08-14T19:56:09.554Z vite:env loading env files: [
+  'C:/Users/yusuf/Downloads/STAGE TIMER/.env',
+  'C:/Users/yusuf/Downloads/STAGE TIMER/.env.local',
+  'C:/Users/yusuf/Downloads/STAGE TIMER/.env.production',
+  'C:/Users/yusuf/Downloads/STAGE TIMER/.env.production.local'
+]
+2026-08-14T19:56:09.554Z vite:env env files loaded in 0.77ms
+2026-08-14T19:56:09.555Z vite:env using resolved env: {}
+2026-08-14T19:56:09.581Z vite:config using resolved config: {
+  plugins: [
+    'vite:optimized-deps',
+    'vite:watch-package-data',
+    'vite:pre-alias',
+    'alias',
+    'vite:react-babel',
+    'vite:react-refresh-fbm',
+    'vite:react-refresh',
+    'vite:modulepreload-polyfill',
+    'vite:resolve-builtin:get-environment',
+    'vite:resolve-builtin',
+    'vite:html-inline-proxy',
+    'vite:css',
+    'builtin:oxc-runtime',
+    'vite:oxc',
+    'builtin:vite-json',
+    'vite:wasm-helper',
+    'vite:worker',
+    'vite:asset',
+    'vite:forward-console',
+    'vite:react-virtual-preamble',
+    'vite:define',
+    'vite:css-post',
+    'vite:build-html',
+    'vite:worker-import-meta-url',
+    'vite:asset-import-meta-url',
+    'vite:prepare-out-dir',
+    'vite:rollup-options-plugins',
+    'vite:dynamic-import-vars',
+    'vite:import-glob',
+    'vite:react:config-post',
+    'vite:build-import-analysis',
+    'native:import-analysis-build',
+    'vite:terser',
+    'vite:license',
+    'native:manifest',
+    'vite:ssr-manifest',
+    'native:reporter',
+    'builtin:vite-load-fallback',
+    'vite:client-inject',
+    'vite:css-analysis',
+    'vite:import-analysis'
+  ],
+  build: {
+    target: [ 'chrome111', 'edge111', 'firefox114', 'safari16.4', 'ios16.4' ],
+    polyfillModulePreload: true,
+    modulePreload: { polyfill: true },
+    outDir: 'dist',
+    assetsDir: 'assets',
+    assetsInlineLimit: 4096,
+    sourcemap: false,
+    terserOptions: {},
+    chunkImportMap: false,
+    rolldownOptions: { platform: 'browser', onwarn: [Function: onwarn] },
+    commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', 
+'.cjs' ] },
+    dynamicImportVarsOptions: { exclude: [ /node_modules/ ] },
+    write: true,
+    emptyOutDir: null,
+    copyPublicDir: true,
+    license: false,
+    manifest: false,
+    lib: false,
+    ssrManifest: false,
+    ssrEmitAssets: false,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 500,
+    watch: null,
+    cssCodeSplit: true,
+    minify: 'oxc',
+    rollupOptions: { platform: 'browser', onwarn: [Function: onwarn] },
+    ssr: false,
+    emitAssets: true,
+    createEnvironment: [Function: createEnvironment],
+    cssTarget: [ 'chrome111', 'edge111', 'firefox114', 'safari16.4', 'ios16.4' 
+],
+    cssMinify: true
+  },
+  worker: {
+    format: 'iife',
+    plugins: '() => plugins',
+    rollupOptions: {},
+    rolldownOptions: {}
+  },
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react/jsx-dev-runtime',
+      'react/jsx-runtime'
+    ],
+    exclude: [],
+    needsInterop: [],
+    rolldownOptions: {
+      transform: { jsx: { runtime: 'automatic' } },
+      resolve: { symlinks: true },
+      output: { topLevelVar: true }
+    },
+    extensions: [],
+    disabled: undefined,
+    holdUntilCrawlEnd: true,
+    force: false,
+    ignoreOutdatedRequests: false,
+    noDiscovery: false,
+    rollupOptions: [Getter/Setter],
+    esbuildOptions: { preserveSymlinks: false }
+  },
+  oxc: {
+    jsx: {
+      development: false,
+      runtime: 'automatic',
+      importSource: undefined,
+      refresh: false
+    },
+    jsxRefreshInclude: /\.[tj]sx?(?:\?.*)?$/,
+    jsxRefreshExclude: /\/node_modules\//
+  },
+  environments: {
+    client: {
+      input: undefined,
+      define: undefined,
+      resolve: {
+        externalConditions: [ 'node', 'module-sync' ],
+        extensions: [
+          '.mjs',  '.js',
+          '.mts',  '.ts',
+          '.jsx',  '.tsx',
+          '.json'
+        ],
+        dedupe: [],
+        noExternal: [],
+        external: [],
+        preserveSymlinks: false,
+        tsconfigPaths: false,
+        alias: [
+          {
+            find: /^\/?@vite\/env/,
+            replacement: '/@fs/C:/Users/yusuf/Downloads/STAGE 
+TIMER/node_modules/vite/dist/client/env.mjs'
+          },
+          {
+            find: /^\/?@vite\/client/,
+            replacement: '/@fs/C:/Users/yusuf/Downloads/STAGE 
+TIMER/node_modules/vite/dist/client/client.mjs'
+          }
+        ],
+        mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+        conditions: [ 'module', 'browser', 'development|production' ],
+        builtins: []
+      },
+      keepProcessEnv: false,
+      consumer: 'client',
+      optimizeDeps: {
+        include: [
+          'react',
+          'react-dom',
+          'react/jsx-dev-runtime',
+          'react/jsx-runtime'
+        ],
+        exclude: [],
+        needsInterop: [],
+        rolldownOptions: {
+          transform: { jsx: { runtime: 'automatic' } },
+          resolve: { symlinks: true },
+          output: { topLevelVar: true }
+        },
+        extensions: [],
+        disabled: undefined,
+        holdUntilCrawlEnd: true,
+        force: false,
+        ignoreOutdatedRequests: false,
+        noDiscovery: false,
+        rollupOptions: [Getter/Setter],
+        esbuildOptions: { preserveSymlinks: false }
+      },
+      dev: {
+        warmup: [],
+        sourcemap: { js: true },
+        sourcemapIgnoreList: [Function: isInNodeModules],
+        preTransformRequests: true,
+        createEnvironment: [Function: defaultCreateClientDevEnvironment],
+        recoverable: true,
+        moduleRunnerTransform: false
+      },
+      build: {
+        target: [
+          'chrome111',
+          'edge111',
+          'firefox114',
+          'safari16.4',
+          'ios16.4'
+        ],
+        polyfillModulePreload: true,
+        modulePreload: { polyfill: true },
+        outDir: 'dist',
+        assetsDir: 'assets',
+        assetsInlineLimit: 4096,
+        sourcemap: false,
+        terserOptions: {},
+        chunkImportMap: false,
+        rolldownOptions: { platform: 'browser', onwarn: [Function: onwarn] },
+        commonjsOptions: { include: [ /node_modules/ ], extensions: [ '.js', 
+'.cjs' ] },
+        dynamicImportVarsOptions: { exclude: [ /node_modules/ ] },
+        write: true,
+        emptyOutDir: null,
+        copyPublicDir: true,
+        license: false,
+        manifest: false,
+        lib: false,
+        ssrManifest: false,
+        ssrEmitAssets: false,
+        reportCompressedSize: true,
+        chunkSizeWarningLimit: 500,
+        watch: null,
+        cssCodeSplit: true,
+        minify: 'oxc',
+        rollupOptions: [Getter/Setter],
+        ssr: false,
+        emitAssets: true,
+        createEnvironment: [Function: createEnvironment],
+        cssTarget: [
+          'chrome111',
+          'edge111',
+          'firefox114',
+          'safari16.4',
+          'ios16.4'
+        ],
+        cssMinify: true
+      },
+      isBundled: true,
+      plugins: [
+        {
+          name: 'vite:watch-package-data',
+          buildStart: [Function: buildStart],
+          buildEnd: [Function: buildEnd],
+          watchChange: [Function: watchChange]
+        },
+        BuiltinPlugin {
+          name: 'builtin:vite-alias',
+          _options: {
+            entries: [
+              {
+                find: /^\/?@vite\/env/,
+                replacement: '/@fs/C:/Users/yusuf/Downloads/STAGE 
+TIMER/node_modules/vite/dist/client/env.mjs'
+              },
+              {
+                find: /^\/?@vite\/client/,
+                replacement: '/@fs/C:/Users/yusuf/Downloads/STAGE 
+TIMER/node_modules/vite/dist/client/client.mjs'
+              }
+            ]
+          },
+          enforce: undefined
+        },
+        {
+          name: 'vite:react-babel',
+          enforce: 'pre',
+          config: [Function: config],
+          configResolved: [Function: configResolved],
+          options: [Function: options]
+        },
+        {
+          name: 'vite:react-refresh-fbm',
+          enforce: 'pre',
+          transformIndexHtml: { handler: [Function: handler], order: 'pre' }
+        },
+        {
+          name: 'vite:react-refresh',
+          enforce: 'pre',
+          config: [Function: config],
+          resolveId: {
+            filter: { id: /^\/@react\-refresh$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: /^\/@react\-refresh$/ },
+            handler: [Function: handler]
+          },
+          transformIndexHtml: [Function: transformIndexHtml]
+        },
+        BuiltinPlugin {
+          name: 'builtin:vite-module-preload-polyfill',
+          _options: { isServer: false },
+          enforce: undefined
+        },
+        {
+          name: 'vite:resolve-builtin:get-environment',
+          buildStart: [Function: buildStart],
+          perEnvironmentStartEndDuringDev: true
+        },
+        BuiltinPlugin {
+          name: 'builtin:vite-resolve',
+          _options: {
+            resolveOptions: {
+              isBuild: true,
+              isProduction: true,
+              asSrc: true,
+              preferRelative: false,
+              isRequire: undefined,
+              root: 'C:/Users/yusuf/Downloads/STAGE TIMER',
+              scan: false,
+              mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext', 
+'main' ],
+              conditions: [ 'module', 'browser', 'development|production' ],
+              externalConditions: [ 'node', 'module-sync' ],
+              extensions: [
+                '.mjs',  '.js',
+                '.mts',  '.ts',
+                '.jsx',  '.tsx',
+                '.json'
+              ],
+              tryIndex: true,
+              tryPrefix: undefined,
+              preserveSymlinks: false,
+              tsconfigPaths: false
+            },
+            environmentConsumer: 'client',
+            environmentName: 'client',
+            builtins: [],
+            external: [],
+            noExternal: [],
+            dedupe: [],
+            disableCache: false,
+            legacyInconsistentCjsInterop: undefined,
+            finalizeBareSpecifier: undefined,
+            finalizeOtherSpecifiers: undefined,
+            resolveSubpathImports: [Function: resolveSubpathImports],
+            yarnPnp: false
+          },
+          enforce: undefined,
+          getOrder: [AsyncFunction: wrappedHook],
+          load: [AsyncFunction: wrappedHook],
+          resolveId: [AsyncFunction: wrappedHook],
+          transform: [AsyncFunction: wrappedHook],
+          watchChange: [AsyncFunction: wrappedHook],
+          perEnvironmentWatchChangeDuringDev: true
+        },
+        {
+          name: 'vite:html-inline-proxy',
+          resolveId: {
+            filter: { id: /[?&]html-proxy\b/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: /[?&]html-proxy\b/ },
+            handler: [Function: handler]
+          }
+        },
+        {
+          name: 'vite:css',
+          buildStart: [Function: buildStart],
+          buildEnd: [AsyncFunction: buildEnd],
+          load: {
+            filter: {
+              id: /\.(css|less|sass|scss|styl|stylus|pcss|postcss|sss)(?:$|\?)/
+            },
+            handler: [Function: handler]
+          },
+          transform: {
+            filter: {
+              id: {
+                include: 
+/\.(css|less|sass|scss|styl|stylus|pcss|postcss|sss)(?:$|\?)/,
+                exclude: [
+                  /[?&]commonjs-proxy/,
+                  /[?&](?:worker|sharedworker|raw|url)\b/
+                ]
+              }
+            },
+            handler: [AsyncFunction: handler]
+          }
+        },
+        BuiltinPlugin {
+          name: 'builtin:vite-transform',
+          _options: {
+            root: 'C:/Users/yusuf/Downloads/STAGE TIMER',
+            include: [ /\.(m?ts|[jt]sx)$/ ],
+            exclude: [ /\.js$/ ],
+            jsxRefreshInclude: [ /\.[tj]sx?(?:\?.*)?$/ ],
+            jsxRefreshExclude: [ /\/node_modules\// ],
+            isServerConsumer: false,
+            jsxInject: undefined,
+            transformOptions: {
+              jsx: {
+                development: false,
+                runtime: 'automatic',
+                importSource: undefined,
+                refresh: false
+              },
+              sourcemap: true
+            },
+            yarnPnp: false
+          },
+          enforce: undefined
+        },
+        BuiltinPlugin {
+          name: 'builtin:vite-json',
+          _options: { namedExports: true, stringify: 'auto', minify: true },
+          enforce: undefined,
+          getOrder: [AsyncFunction: wrappedHook],
+          load: [AsyncFunction: wrappedHook],
+          resolveId: [AsyncFunction: wrappedHook],
+          transform: [AsyncFunction: wrappedHook],
+          watchChange: [AsyncFunction: wrappedHook]
+        },
+        {
+          name: 'vite:wasm-helper',
+          resolveId: {
+            filter: { id: /^ vite\/wasm\-helper\.js$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: {
+              id: [
+                /^ vite\/wasm\-helper\.js$/,
+                /(?<![?#].*)\.wasm\?init/,
+                /(?<![?#].*)\.wasm$/,
+                /[?&]vite-wasm-instance(?:&|$)/
+              ]
+            },
+            handler: [AsyncFunction: handler]
+          },
+          renderChunk: undefined
+        },
+        {
+          name: 'vite:worker',
+          buildStart: [Function: buildStart],
+          load: {
+            filter: { id: /(?:\?|&)(worker|sharedworker)(?:&|$)/ },
+            handler: [AsyncFunction: handler]
+          },
+          transform: {
+            filter: { id: /(?:\?|&)worker_file&type=(\w+)(?:&|$)/ },
+            handler: [Function: handler]
+          },
+          renderChunk: [Function: renderChunk],
+          generateBundle: [Function: generateBundle],
+          watchChange: [Function: watchChange]
+        },
+        {
+          name: 'vite:asset',
+          perEnvironmentStartEndDuringDev: true,
+          buildStart: [Function: buildStart],
+          resolveId: {
+            filter: {
+              id: [
+                /(\?|&)url(?:&|$)/,
+                /\.(apng|bmp|png|jpe?g|jfif|pjpeg|pjp|gif|svg|ico|webp|avif|cur
+|jxl|mp4|webm|ogg|mp3|wav|flac|aac|opus|mov|m4a|vtt|woff2?|eot|ttf|otf|webmanif
+est|pdf|txt)(\?.*)?$/i
+              ]
+            },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: {
+              id: {
+                include: [
+                  /(\?|&)raw(?:&|$)/,
+                  /(\?|&)url(?:&|$)/,
+                  /\.(apng|bmp|png|jpe?g|jfif|pjpeg|pjp|gif|svg|ico|webp|avif|c
+ur|jxl|mp4|webm|ogg|mp3|wav|flac|aac|opus|mov|m4a|vtt|woff2?|eot|ttf|otf|webman
+ifest|pdf|txt)(\?.*)?$/i
+                ],
+                exclude: /^\0/
+              }
+            },
+            handler: [AsyncFunction: handler]
+          },
+          renderChunk: [Function: renderChunk],
+          generateBundle: [Function: generateBundle],
+          watchChange: [Function: watchChange]
+        },
+        {
+          name: 'vite:forward-console',
+          apply: 'serve',
+          configureServer: [Function: configureServer]
+        },
+        {
+          name: 'vite:react-virtual-preamble',
+          resolveId: {
+            order: 'pre',
+            filter: { id: /^@vitejs\/plugin\-react\/preamble$/ },
+            handler: [Function: handler]
+          },
+          load: {
+            filter: { id: /^ @vitejs\/plugin\-react\/preamble$/ },
+            handler: [Function: handler]
+          }
+        },
+        { name: 'vite:define', options: [Function: options] },
+        {
+          name: 'vite:css-post',
+          renderStart: [Function: renderStart],
+          transform: {
+            filter: {
+              id: {
+                include: 
+/\.(css|less|sass|scss|styl|stylus|pcss|postcss|sss)(?:$|\?)/,
+                exclude: [
+                  /[?&]commonjs-proxy/,
+                  /[?&](?:worker|sharedworker|raw|url)\b/
+                ]
+              }
+            },
+            handler: [AsyncFunction: handler]
+          },
+          renderChunk: [AsyncFunction: renderChunk],
+          augmentChunkHash: [Function: augmentChunkHash],
+          generateBundle: [AsyncFunction: generateBundle]
+        },
+        {
+          name: 'vite:build-html',
+          applyToEnvironment: [Function: applyToEnvironment],
+          transform: {
+            filter: { id: /\.html$/ },
+            handler: [AsyncFunction: handler]
+          },
+          generateBundle: [AsyncFunction: generateBundle]
+        },
+        {
+          name: 'vite:worker-import-meta-url',
+          applyToEnvironment: [Function: applyToEnvironment],
+          transform: {
+            filter: {
+              code: /\bnew\s+(?:Worker|SharedWorker)\s*\(\s*(new\s+URL\s*\(\s*(
+'[^']+'|"[^"]+"|`[^`]+`)\s*,\s*import\.meta\.url\s*(?:,\s*)?\))/dg
+            },
+            handler: [AsyncFunction: handler]
+          }
+        },
+        {
+          name: 'vite:asset-import-meta-url',
+          applyToEnvironment: [Function: applyToEnvironment],
+          transform: {
+            filter: {
+              id: {
+                exclude: [
+                  /^ vite\/preload\-helper\.js$/,
+                  /^C:\\Users\\yusuf\\Downloads\\STAGE 
+TIMER\\node_modules\\vite\\dist\\client\\client\.mjs$/
+                ]
+              },
+              code: /\bnew\s+URL\s*\(\s*('[^']+'|"[^"]+"|`[^`]+`)\s*,\s*import\
+.meta\.url\s*(?:,\s*)?\)/dg
+            },
+            handler: [AsyncFunction: handler]
+          }
+        },
+        {
+          name: 'vite:prepare-out-dir',
+          watchChange: [Function: watchChange],
+          renderStart: { order: 'pre', handler: [Function: handler] }
+        },
+        BuiltinPlugin {
+          name: 'builtin:vite-dynamic-import-vars',
+          _options: {
+            include: undefined,
+            exclude: [ /node_modules/ ],
+            resolver: [Function: resolver],
+            sourcemap: false
+          },
+          enforce: undefined
+        },
+        BuiltinPlugin {
+          name: 'builtin:vite-import-glob',
+          _options: {
+            root: 'C:/Users/yusuf/Downloads/STAGE TIMER',
+            sourcemap: false,
+            restoreQueryExtension: false
+          },
+          enforce: undefined
+        },
+        {
+          name: 'vite:react:config-post',
+          enforce: 'post',
+          config: [Function: config]
+        },
+        {
+          name: 'vite:build-import-analysis',
+          renderChunk: [Function: renderChunk],
+          generateBundle: [AsyncFunction: generateBundle]
+        },
+        BuiltinPlugin {
+          name: 'builtin:vite-build-import-analysis',
+          _options: {
+            preloadCode: `const scriptRel = 'modulepreload';const assetsURL = 
+function(dep) { return "/"+dep };const seen = {};export const __vitePreload = 
+function preload(baseModule, deps, importerUrl) {\n` +
+              '\tlet promise = Promise.resolve();\n' +
+              '\tif (__VITE_IS_MODERN__ && deps && deps.length > 0) {\n' +
+              '\t\tconst links = document.getElementsByTagName("link");\n' +
+              '\t\tconst cspNonceMeta = 
+document.querySelector("meta[property=csp-nonce]");\n' +
+              '\t\tconst cspNonce = cspNonceMeta?.nonce || 
+cspNonceMeta?.getAttribute("nonce");\n' +
+              '\t\tfunction allSettled(promises) {\n' +
+              '\t\t\treturn Promise.all(promises.map((p) => 
+Promise.resolve(p).then((value) => ({\n' +
+              '\t\t\t\tstatus: "fulfilled",\n' +
+              '\t\t\t\tvalue\n' +
+              '\t\t\t}), (reason) => ({\n' +
+              '\t\t\t\tstatus: "rejected",\n' +
+              '\t\t\t\treason\n' +
+              '\t\t\t}))));\n' +
+              '\t\t}\n' +
+              '\t\tfunction importMetaResolve(specifier) {\n' +
+              '\t\t\tif (import.meta.resolve) return 
+import.meta.resolve(specifier);\n' +
+              '\t\t\treturn new URL(\n' +
+              '\t\t\t\tspecifier,\n' +
+              '\t\t\t\t/** #__KEEP__ */\n' +
+              '\t\t\t\timport.meta.url\n' +
+              '\t\t\t).href;\n' +
+              '\t\t}\n' +
+              '\t\tpromise = allSettled(deps.map((dep) => {\n' +
+              '\t\t\tdep = assetsURL(dep, importerUrl);\n' +
+              '\t\t\tdep = importMetaResolve(dep);\n' +
+              '\t\t\tif (dep in seen) return;\n' +
+              '\t\t\tseen[dep] = true;\n' +
+              '\t\t\tconst isCss = dep.endsWith(".css");\n' +
+              '\t\t\tfor (let i = links.length - 1; i >= 0; i--) {\n' +
+              '\t\t\t\tconst link = links[i];\n' +
+              '\t\t\t\tif (link.href === dep && (!isCss || link.rel === 
+"stylesheet")) return;\n' +
+              '\t\t\t}\n' +
+              '\t\t\tconst link = document.createElement("link");\n' +
+              '\t\t\tlink.rel = isCss ? "stylesheet" : scriptRel;\n' +
+              '\t\t\tif (!isCss) link.as = "script";\n' +
+              '\t\t\tlink.crossOrigin = "";\n' +
+              '\t\t\tlink.href = dep;\n' +
+              '\t\t\tif (cspNonce) link.setAttribute("nonce", cspNonce);\n' +
+              '\t\t\tdocument.head.appendChild(link);\n' +
+              '\t\t\tif (isCss) return new Promise((res, rej) => {\n' +
+              '\t\t\t\tlink.addEventListener("load", res);\n' +
+              '\t\t\t\tlink.addEventListener("error", () => rej(/* @__PURE__ 
+*/ new Error(`Unable to preload CSS for ${dep}`)));\n' +
+              '\t\t\t});\n' +
+              '\t\t}));\n' +
+              '\t}\n' +
+              '\tfunction handlePreloadError(err) {\n' +
+              '\t\tconst e = new Event("vite:preloadError", { cancelable: true 
+});\n' +
+              '\t\te.payload = err;\n' +
+              '\t\twindow.dispatchEvent(e);\n' +
+              '\t\tif (!e.defaultPrevented) throw err;\n' +
+              '\t}\n' +
+              '\treturn promise.then((res) => {\n' +
+              '\t\tfor (const item of res || []) {\n' +
+              '\t\t\tif (item.status !== "rejected") continue;\n' +
+              '\t\t\thandlePreloadError(item.reason);\n' +
+              '\t\t}\n' +
+              '\t\treturn baseModule().catch(handlePreloadError);\n' +
+              '\t});\n' +
+              '}',
+[36mvite v8.2.1 [32mbuilding client environment for production...[36m[39m
+            insertPreload: true,
+            optimizeModulePreloadRelativePaths: false,
+            renderBuiltUrl: false,
+            isRelativeBase: false
+          },
+          enforce: undefined
+        },
+        {
+          name: 'vite:terser',
+          applyToEnvironment: [Function: applyToEnvironment],
+          renderChunk: [AsyncFunction: renderChunk],
+          closeBundle: [Function: closeBundle]
+        },
+        {
+          name: 'vite:license',
+          generateBundle: [Function: generateBundle]
+        },
+        BuiltinPlugin {
+          name: 'builtin:vite-reporter',
+          _options: {
+            root: 'C:/Users/yusuf/Downloads/STAGE TIMER',
+            isTty: false,
+            isLib: false,
+            assetsDir: 'assets\\',
+            chunkLimit: 500,
+            logInfo: [Function (anonymous)],
+            reportCompressedSize: true,
+            warnLargeChunks: true
+          },
+          enforce: undefined
+        },
+        BuiltinPlugin {
+          name: 'builtin:vite-load-fallback',
+          _options: undefined,
+          enforce: undefined
+        }
+      ],
+      optimizeDepsPluginNames: []
+    }
+  },
+  resolve: {
+    externalConditions: [ 'node', 'module-sync' ],
+    extensions: [
+      '.mjs',  '.js',
+      '.mts',  '.ts',
+      '.jsx',  '.tsx',
+      '.json'
+    ],
+    dedupe: [],
+    noExternal: [],
+    external: [],
+    preserveSymlinks: false,
+    tsconfigPaths: false,
+    alias: [
+      {
+        find: /^\/?@vite\/env/,
+        replacement: '/@fs/C:/Users/yusuf/Downloads/STAGE 
+TIMER/node_modules/vite/dist/client/env.mjs'
+      },
+      {
+        find: /^\/?@vite\/client/,
+        replacement: '/@fs/C:/Users/yusuf/Downloads/STAGE 
+TIMER/node_modules/vite/dist/client/client.mjs'
+      }
+    ],
+    mainFields: [ 'browser', 'module', 'jsnext:main', 'jsnext' ],
+    conditions: [ 'module', 'browser', 'development|production' ],
+    builtins: []
+  },
+  configFile: 'C:/Users/yusuf/Downloads/STAGE TIMER/vite.config.js',
+  configFileDependencies: [ 'C:/Users/yusuf/Downloads/STAGE 
+TIMER/vite.config.js' ],
+  inlineConfig: {
+    root: undefined,
+    base: undefined,
+    mode: undefined,
+    configFile: undefined,
+    configLoader: undefined,
+    logLevel: undefined,
+    clearScreen: undefined,
+    build: { rolldownOptions: undefined, rollupOptions: [Getter/Setter] },
+    worker: { rolldownOptions: undefined, rollupOptions: [Getter/Setter] },
+    optimizeDeps: { rolldownOptions: undefined, rollupOptions: [Getter/Setter] 
+}
+  },
+  root: 'C:/Users/yusuf/Downloads/STAGE TIMER',
+  base: '/',
+  decodedBase: '/',
+  rawBase: '/',
+  publicDir: 'C:/Users/yusuf/Downloads/STAGE TIMER/public',
+  cacheDir: 'C:/Users/yusuf/Downloads/STAGE TIMER/node_modules/.vite',
+  command: 'build',
+  mode: 'production',
+  isWorker: false,
+  mainConfig: null,
+  bundleChain: [],
+  isProduction: true,
+  css: {
+    transformer: 'postcss',
+    preprocessorMaxWorkers: true,
+    devSourcemap: false
+  },
+  json: { namedExports: true, stringify: 'auto' },
+  esbuild: { jsxDev: false, charset: 'utf8', legalComments: 'none' },
+  server: {
+    port: 5173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: 
+/^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {},
+    warmup: { clientFiles: [], ssrFiles: [] },
+    middlewareMode: false,
+    fs: {
+      strict: true,
+      deny: [
+        '.env',
+        '.env.*',
+        '*.{crt,pem,key,p12,pfx,cer,der}',
+        '.npmrc',
+        '.yarnrc.yml',
+        '**/.git/**'
+      ],
+      allow: [ 'C:/Users/yusuf/Downloads/STAGE TIMER' ]
+    },
+    preTransformRequests: true,
+    perEnvironmentStartEndDuringDev: false,
+    perEnvironmentWatchChangeDuringDev: false,
+    forwardConsole: {
+      enabled: true,
+      unhandledErrors: true,
+      logLevels: [ 'error', 'warn' ]
+    },
+    sourcemapIgnoreList: [Function: isInNodeModules],
+    ws: {},
+    hmr: {
+      protocol: [Getter/Setter],
+      host: [Getter/Setter],
+      port: [Getter/Setter],
+      clientPort: [Getter/Setter],
+      path: [Getter/Setter],
+      timeout: [Getter/Setter],
+      server: [Getter/Setter]
+    }
+  },
+  builder: undefined,
+  preview: {
+    port: 4173,
+    strictPort: false,
+    host: undefined,
+    allowedHosts: [],
+    https: undefined,
+    open: false,
+    proxy: undefined,
+    cors: {
+      origin: 
+/^https?:\/\/(?:(?:[^:]+\.)?localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/
+    },
+    headers: {}
+  },
+  envDir: 'C:/Users/yusuf/Downloads/STAGE TIMER',
+  env: { BASE_URL: '/', MODE: 'production', DEV: false, PROD: true },
+  assetsInclude: [Function: assetsInclude],
+  rawAssetsInclude: [],
+  logger: {
+    hasWarned: false,
+    info: [Function: info],
+    warn: [Function: warn],
+    warnOnce: [Function: warnOnce],
+    error: [Function: error],
+    clearScreen: [Function: clearScreen],
+    hasErrorLogged: [Function: hasErrorLogged]
+  },
+  packageCache: Map(1) {
+    'fnpd_C:/Users/yusuf/Downloads/STAGE TIMER' => {
+      dir: 'C:/Users/yusuf/Downloads/STAGE TIMER',
+      data: {
+        name: 'stage-timer',
+        private: true,
+        version: '0.0.0',
+        type: 'module',
+        scripts: {
+          dev: 'vite',
+          build: 'vite build',
+          lint: 'oxlint',
+          preview: 'vite preview'
+        },
+        dependencies: {
+          'lucide-react': '^1.31.0',
+          react: '^19.2.8',
+          'react-dom': '^19.2.8'
+        },
+        devDependencies: {
+          '@types/react': '^19.2.17',
+          '@types/react-dom': '^19.2.3',
+          '@vitejs/plugin-react': '^6.0.4',
+          oxlint: '^1.75.0',
+          vite: '^8.2.0'
+        }
+      },
+      hasSideEffects: [Function: hasSideEffects],
+      setResolvedCache: [Function: setResolvedCache],
+      getResolvedCache: [Function: getResolvedCache]
+    },
+    set: [Function (anonymous)]
+  },
+  appType: 'spa',
+  experimental: {
+    importGlobRestoreExtension: false,
+    renderBuiltUrl: undefined,
+    hmrPartialAccept: false,
+    bundledDev: false
+  },
+  future: undefined,
+  ssr: {
+    target: 'node',
+    optimizeDeps: { esbuildOptions: { preserveSymlinks: false } },
+    resolve: { conditions: undefined, externalConditions: undefined }
+  },
+  input: undefined,
+  dev: {
+    warmup: [],
+    sourcemap: { js: true },
+    sourcemapIgnoreList: [Function: isInNodeModules],
+    preTransformRequests: false,
+    createEnvironment: [Function: defaultCreateDevEnvironment],
+    recoverable: false,
+    moduleRunnerTransform: false
+  },
+  devtools: { config: { host: 'localhost' }, enabled: false },
+  webSocketToken: 'zWck-daZHm7Z',
+  getSortedPlugins: [Function: getSortedPlugins],
+  getSortedPluginHooks: [Function: getSortedPluginHooks],
+  createResolver: [Function: createResolver],
+  fsDenyGlob: [Function: arrayMatcher],
+  safeModulePaths: Set(0) {},
+  Symbol(vite:resolved-config): true
+}
+[2K
+transforming...Γ£ô 1794 modules transformed.
+rendering chunks...
+[31mΓ£ù[39m Build failed in 374ms
+[31merror during build:
+[31mBuild failed with 5 errors:
+
+[31m[MISSING_EXPORT] [0m"default" is not exported by 
+"node_modules/lucide-react/dist/esm/lucide-react.mjs".
+   [38;5;246mΓò¡[0m[38;5;246mΓöÇ[0m[38;5;246m[[0m src/App.jsx:2:8 
+[38;5;246m][0m
+   [38;5;246mΓöé[0m
+ [38;5;246m2 Γöé[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;24
+9mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0mTimerIcon[38;5;249m [0
+m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [
+0m[38;5;249m"[0m[38;5;249ml[0m[38;5;249mu[0m[38;5;249mc[0m[38;5;249mi
+[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mr[0m[38;5;249me
+[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m
+;[0m
+ [38;5;240m  Γöé[0m        ΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇΓöÇ  
+ [38;5;240m  Γöé[0m            Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ Missing export
+[38;5;246mΓöÇΓöÇΓöÇΓò»[0m
+
+[31m[MISSING_EXPORT] [0m"default" is not exported by 
+"node_modules/lucide-react/dist/esm/lucide-react.mjs".
+   [38;5;246mΓò¡[0m[38;5;246mΓöÇ[0m[38;5;246m[[0m src/App.jsx:3:8 
+[38;5;246m][0m
+   [38;5;246mΓöé[0m
+ [38;5;246m3 Γöé[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;24
+9mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0mLayoutIcon[38;5;249m [
+0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m 
+[0m[38;5;249m"[0m[38;5;249ml[0m[38;5;249mu[0m[38;5;249mc[0m[38;5;249mi
+[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mr[0m[38;5;249m
+e[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249
+m;[0m
+ [38;5;240m  Γöé[0m        ΓöÇΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇΓöÇ  
+ [38;5;240m  Γöé[0m             Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ Missing export
+[38;5;246mΓöÇΓöÇΓöÇΓò»[0m
+
+[31m[MISSING_EXPORT] [0m"default" is not exported by 
+"node_modules/lucide-react/dist/esm/lucide-react.mjs".
+   [38;5;246mΓò¡[0m[38;5;246mΓöÇ[0m[38;5;246m[[0m src/App.jsx:4:8 
+[38;5;246m][0m
+   [38;5;246mΓöé[0m
+ [38;5;246m4 Γöé[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;24
+9mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0mSettingsIcon[38;5;249m 
+[0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m
+ [0m[38;5;249m"[0m[38;5;249ml[0m[38;5;249mu[0m[38;5;249mc[0m[38;5;249
+mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mr[0m[38;5;24
+9me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;2
+49m;[0m
+ [38;5;240m  Γöé[0m        ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇΓöÇΓöÇ  
+ [38;5;240m  Γöé[0m              Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ Missing export
+[38;5;246mΓöÇΓöÇΓöÇΓò»[0m
+
+[31m[MISSING_EXPORT] [0m"default" is not exported by 
+"node_modules/lucide-react/dist/esm/lucide-react.mjs".
+   [38;5;246mΓò¡[0m[38;5;246mΓöÇ[0m[38;5;246m[[0m src/App.jsx:5:8 
+[38;5;246m][0m
+   [38;5;246mΓöé[0m
+ [38;5;246m5 Γöé[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;24
+9mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0mCheckIcon[38;5;249m [0
+m[38;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [
+0m[38;5;249m"[0m[38;5;249ml[0m[38;5;249mu[0m[38;5;249mc[0m[38;5;249mi
+[0m[38;5;249md[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mr[0m[38;5;249me
+[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m
+;[0m
+ [38;5;240m  Γöé[0m        ΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇΓöÇ  
+ [38;5;240m  Γöé[0m            Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ Missing export
+[38;5;246mΓöÇΓöÇΓöÇΓò»[0m
+
+[31m[MISSING_EXPORT] [0m"default" is not exported by 
+"node_modules/lucide-react/dist/esm/lucide-react.mjs".
+   [38;5;246mΓò¡[0m[38;5;246mΓöÇ[0m[38;5;246m[[0m src/App.jsx:6:8 
+[38;5;246m][0m
+   [38;5;246mΓöé[0m
+ [38;5;246m6 Γöé[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;24
+9mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0mXIcon[38;5;249m [0m[3
+8;5;249mf[0m[38;5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[
+38;5;249m"[0m[38;5;249ml[0m[38;5;249mu[0m[38;5;249mc[0m[38;5;249mi[0m
+[38;5;249md[0m[38;5;249me[0m[38;5;249m-[0m[38;5;249mr[0m[38;5;249me[0m
+[38;5;249ma[0m[38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m;[0
+m
+ [38;5;240m  Γöé[0m        ΓöÇΓöÇΓö¼ΓöÇΓöÇ  
+ [38;5;240m  Γöé[0m          Γò░ΓöÇΓöÇΓöÇΓöÇ Missing export
+[38;5;246mΓöÇΓöÇΓöÇΓò»[0m
+[31m
+    at aggregateBindingErrorsIntoJsError (file:///C:/Users/yusuf/Downloads/STAG
+E%20TIMER/node_modules/rolldown/dist/shared/error-CVc7IgvG.mjs:48:18)
+    at unwrapBindingResult (file:///C:/Users/yusuf/Downloads/STAGE%20TIMER/node
+_modules/rolldown/dist/shared/error-CVc7IgvG.mjs:18:128)
+    at #build (file:///C:/Users/yusuf/Downloads/STAGE%20TIMER/node_modules/roll
+down/dist/shared/rolldown-DiYVDns9.mjs:132:34)
+    at async buildEnvironment (file:///C:/Users/yusuf/Downloads/STAGE%20TIMER/n
+ode_modules/vite/dist/node/chunks/node.js:33730:66)
+    at async Object.build (file:///C:/Users/yusuf/Downloads/STAGE%20TIMER/node_
+modules/vite/dist/node/chunks/node.js:34150:19)
+    at async Object.buildApp (file:///C:/Users/yusuf/Downloads/STAGE%20TIMER/no
+de_modules/vite/dist/node/chunks/node.js:34147:153)
+    at async CAC.<anonymous> (file:///C:/Users/yusuf/Downloads/STAGE%20TIMER/no
+de_modules/vite/dist/node/cli.js:776:3) {
+  errors: [Getter/Setter]
+}[39m
