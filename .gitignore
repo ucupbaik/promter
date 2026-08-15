@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .vercel
+
+buildlog.txt
+dev_server.txt
