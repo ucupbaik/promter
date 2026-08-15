@@ -4,6 +4,7 @@ import { createServer } from "http";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import { existsSync } from "fs";
+import { pool, initDb, loadRoom, saveRoom } from "./db.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT || 3001;
@@ -64,9 +65,36 @@ function defaultState() {
 
 function getRoom(roomId) {
   if (!rooms.has(roomId)) {
-    rooms.set(roomId, { state: defaultState(), clients: new Map(), apiToken: Math.random().toString(36).slice(2, 10) });
+    rooms.set(roomId, { state: defaultState(), clients: new Map(), apiToken: Math.random().toString(36).slice(2, 10), loaded: false });
   }
   return rooms.get(roomId);
+}
+
+// Load persisted room state from Neon (async, best-effort) and persist on change.
+async function ensureLoaded(roomId) {
+  const room = getRoom(roomId);
+  if (room.loaded || !pool) return room;
+  room.loaded = true;
+  try {
+    const row = await loadRoom(roomId);
+    if (row) {
+      room.state = { ...defaultState(), ...row.state };
+      room.apiToken = row.api_token;
+    } else {
+      await saveRoom(roomId, room.state, room.apiToken);
+    }
+  } catch (e) {
+    console.error("[db] load failed for", roomId, e.message);
+  }
+  return room;
+}
+
+function persist(roomId) {
+  const room = rooms.get(roomId);
+  if (!room || !pool) return;
+  saveRoom(roomId, room.state, room.apiToken).catch((e) =>
+    console.error("[db] save failed for", roomId, e.message)
+  );
 }
 
 function connList(room) {
@@ -103,7 +131,7 @@ wss.on("connection", (ws, req) => {
   const url = new URL(req.url, "http://localhost");
   const roomId = url.searchParams.get("room") || "default";
   const output = url.searchParams.get("output") || "controller";
-  const room = getRoom(roomId);
+  const room = await ensureLoaded(roomId);
   const connId = Math.random().toString(36).slice(2, 8);
   const conn = { id: connId, ws, output, identifier: "", connectedAt: Date.now(), transport: "WebSocket" };
   room.clients.set(connId, conn);
@@ -120,23 +148,28 @@ wss.on("connection", (ws, req) => {
     if (data.type === "update" && data.state) {
       room.state = data.state;
       broadcast(roomId, { type: "state", state: room.state }, ws);
+      persist(roomId);
     } else if (data.type === "flash") {
       room.state.flashSignal = (room.state.flashSignal || 0) + 1;
       broadcast(roomId, { type: "state", state: room.state }, ws);
     } else if (data.type === "stage-update" && data.stage) {
       room.state.stage = data.stage;
       broadcast(roomId, { type: "state", state: room.state }, ws);
+      persist(roomId);
     } else if (data.type === "log" && data.text) {
       addLog(roomId, data.text);
     } else if (data.type === "question-add" && data.question) {
       room.state.questions = [...room.state.questions, { id: Math.random().toString(36).slice(2, 9), text: data.question, name: data.name || "", answered: false, t: Date.now() }];
       broadcast(roomId, { type: "state", state: room.state });
+      persist(roomId);
     } else if (data.type === "question-update" && data.id) {
       room.state.questions = room.state.questions.map((q) => q.id === data.id ? { ...q, ...data.patch } : q);
       broadcast(roomId, { type: "state", state: room.state });
+      persist(roomId);
     } else if (data.type === "question-delete" && data.id) {
       room.state.questions = room.state.questions.filter((q) => q.id !== data.id);
       broadcast(roomId, { type: "state", state: room.state });
+      persist(roomId);
     } else if (data.type === "conn-update") {
       const c = room.clients.get(data.id);
       if (c) { c.identifier = data.identifier || ""; sendConnections(roomId); }
@@ -185,6 +218,7 @@ app.post("/api/:room/timer/start", (req, res) => {
   const id = req.body.id || room.state.activeId;
   room.state.timers = room.state.timers.map((t) => t.id === id && !t.running ? { ...t, running: true, startEpoch: Date.now() - t.elapsedAtPause * 1000 } : t);
   broadcast(req.params.room, { type: "state", state: room.state });
+  persist(req.params.room);
   res.json({ ok: true });
 });
 app.post("/api/:room/timer/pause", (req, res) => {
@@ -197,6 +231,7 @@ app.post("/api/:room/timer/pause", (req, res) => {
     return { ...t, running: false, elapsedAtPause: el };
   });
   broadcast(req.params.room, { type: "state", state: room.state });
+  persist(req.params.room);
   res.json({ ok: true });
 });
 app.post("/api/:room/timer/reset", (req, res) => {
@@ -205,6 +240,7 @@ app.post("/api/:room/timer/reset", (req, res) => {
   const id = req.body.id || room.state.activeId;
   room.state.timers = room.state.timers.map((t) => t.id === id ? { ...t, running: false, elapsedAtPause: 0, startEpoch: null } : t);
   broadcast(req.params.room, { type: "state", state: room.state });
+  persist(req.params.room);
   res.json({ ok: true });
 });
 app.post("/api/:room/timer/adjust", (req, res) => {
@@ -218,6 +254,7 @@ app.post("/api/:room/timer/adjust", (req, res) => {
     return { ...t, elapsedAtPause: Math.max(0, t.elapsedAtPause + delta) };
   });
   broadcast(req.params.room, { type: "state", state: room.state });
+  persist(req.params.room);
   res.json({ ok: true });
 });
 app.post("/api/:room/blackout", (req, res) => {
@@ -225,6 +262,7 @@ app.post("/api/:room/blackout", (req, res) => {
   if (!room) return;
   room.state.blackout = !!req.body.value;
   broadcast(req.params.room, { type: "state", state: room.state });
+  persist(req.params.room);
   res.json({ ok: true });
 });
 app.post("/api/:room/flash", (req, res) => {
@@ -232,10 +270,12 @@ app.post("/api/:room/flash", (req, res) => {
   if (!room) return;
   room.state.flashSignal = (room.state.flashSignal || 0) + 1;
   broadcast(req.params.room, { type: "state", state: room.state });
+  persist(req.params.room);
   res.json({ ok: true });
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, async () => {
   console.log(`Stage Timer server running on http://localhost:${PORT}`);
   console.log(`WebSocket endpoint: ws://localhost:${PORT}/ws`);
+  await initDb();
 });

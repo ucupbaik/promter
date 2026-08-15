@@ -27,3 +27,4 @@ dist-ssr
 
 buildlog.txt
 dev_server.txt
+.env*
